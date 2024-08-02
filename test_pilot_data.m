@@ -294,7 +294,7 @@ for time_bin = 1:numTimeBins
             disp(['time bin ' num2str(time_bin) ' processed'])
     end 
 end
-
+%% Plot all properties
 figure;
 plot(data_subset_bs.time, partial_corr_behav_eeg(1, :));
 hold on;
@@ -315,5 +315,39 @@ yline(0, '--');
 xlabel('Time');
 ylabel('Partial Correlation');
 legend('Liking', 'Valence', 'Arousal', 'Complexity', 'Familiarity', 'Style', 'Category');
+xlim([-0.05 1.0]);
+title('Partial Correlations with EEG Data');
+
+%%Plot 5 properties
+figure;
+plot(data_subset_bs.time, partial_corr_behav_eeg(1, :));
+hold on;
+plot(data_subset_bs.time, partial_corr_behav_eeg(2, :));
+hold on;
+plot(data_subset_bs.time, partial_corr_behav_eeg(3, :));
+hold on;
+plot(data_subset_bs.time, partial_corr_behav_eeg(4, :));
+hold on;
+plot(data_subset_bs.time, partial_corr_behav_eeg(5, :));
+hold on;
+xline(0, '--'); 
+yline(0, '--');
+xlabel('Time');
+ylabel('Partial Correlation');
+legend('Liking', 'Valence', 'Arousal', 'Complexity', 'Familiarity');
+xlim([-0.05 1.0]);
+title('Partial Correlations with EEG Data');
+
+%%Plot 2 properties
+figure;
+plot(data_subset_bs.time, partial_corr_behav_eeg(6, :));
+hold on;
+plot(data_subset_bs.time, partial_corr_behav_eeg(7, :));
+hold on;
+xline(0, '--'); 
+yline(0, '--');
+xlabel('Time');
+ylabel('Partial Correlation');
+legend('Style', 'Category');
 xlim([-0.05 1.0]);
 title('Partial Correlations with EEG Data');
